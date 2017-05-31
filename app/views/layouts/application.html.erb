@@ -13,13 +13,19 @@
 
   <body>
 
-  	<%= render 'shared/nav_head' %>
+    <header>
+      <%= render 'shared/nav_head' %>
+    </header>
+    
+    <main>
+    	<%= render 'shared/shopping_nav' %>
 
-  	<%= render 'shared/shopping_nav' %>
+      <%= yield %>
+    </main>
 
-    <%= yield %>
-
-    <%= render 'shared/nav_foot' unless controller_name == 'sessions' || controller_name == 'registrations' %>
+    <footer>
+      <%= render 'shared/nav_foot' unless controller_name == 'sessions' || controller_name == 'registrations' %>
+    </footer>
 
     <%= alerts %>
 
