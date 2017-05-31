@@ -2,11 +2,11 @@
 <br>
 <br>
 <br>
+	<div id='whats-inside'>
   <% if user_signed_in? %>
     <h5 class="center-align">Hello, <%= current_user.first_name %>! Check out our awesome deals for new customers!</h5>
   <% end %>
 
-	<div id='whats-inside'>
 		<%= render 'shared/carousel' %>
 		<h5 class='center-align'>What's In The Box</h5>
 		<p class='center-align'>Get four deluxe clothing samples and a surprise gift, all tailored to your personal profile, for our low monthly price.</p>
