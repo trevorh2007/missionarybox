@@ -1,0 +1,17 @@
+<div class="container">
+<br>
+<br>
+<br>
+  <% if user_signed_in? %>
+    <h5 class="center-align">Hello, <%= current_user.first_name %>! Check out our awesome deals for new customers!</h5>
+  <% end %>
+
+	<%= render 'shared/carousel' %>
+
+	<h5 class='center-align'>What's In The Box</h5>
+	<p class='center-align'>Get four deluxe clothing samples and a lifestyle product, all tailored to your personal profile, for our low monthly price.</p>
+	<div class='center-align'>
+	<%= link_to "Get Started", new_user_registration_path, class: 'home-btn-color btn waves-effect waves-light' %>
+	</div>
+	<br>
+</div>

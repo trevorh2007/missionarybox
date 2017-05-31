@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Missionary Box</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+
+  <body>
+
+  	<%= render 'shared/nav_head' %>
+
+  	<%= render 'shared/shopping_nav' %>
+
+    <%= yield %>
+
+    <%= render 'shared/nav_foot' unless controller_name == 'sessions' || controller_name == 'registrations' %>
+
+    <%= alerts %>
+
+  </body>
+</html>
