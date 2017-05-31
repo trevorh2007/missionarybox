@@ -2,7 +2,7 @@
   <nav class="nav-extended navbar-color">
       <div class="container nav-wrapper">
         <a href="/" class="brand-logo">My Missionary Box</a>
-        <a href="#" data-activates="mobile-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if !user_signed_in? %>
             <li><%= link_to "Login", new_user_session_path %></li>
@@ -12,7 +12,7 @@
           <% end %>
           <li><a href="register">Subscribe</a></li>
         </ul>
-        <ul class="side-nav" id="mobile-out">
+        <ul class="side-nav" id="mobile-nav">
         <% if !user_signed_in? %>
           <li><%= link_to "Login", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
