@@ -1,24 +1,9 @@
-# README
+## Site for a missionary box ordering service
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### TODO
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ecommerce integration
+- Implement cart session so users don't lose items in cart
+- More content to homepage
+- Content for about page
+- Fix header nav so tabs will direct to correct position on site
