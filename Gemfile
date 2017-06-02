@@ -11,7 +11,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 
 group :development, :test do
@@ -36,3 +35,4 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1', groups: [:development, :test]
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'twitter-bootstrap-rails-confirm', '~> 1.0', '>= 1.0.6'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'shopify_app', '~> 7.2', '>= 7.2.9'
