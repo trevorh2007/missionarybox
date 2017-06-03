@@ -3,13 +3,20 @@
 <br>
 <br>
 <div class='container'>
+    <div class="card blue-grey darken-1">
+    	<div class="card-content white-text">
+      	<div class="card-block">
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= item.product.name %> | <%= link_to "Delete", order_items_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+    <h5><%= item.product.name %></h5>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+    <%= link_to "Delete", order_items_path(item), :data => {:confirm => "You sure?", :method => "delete"} %>
   <% end %>
   <p>Your Total: <%= number_to_currency current_order.total_price %></p>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
+			</div>
+		</div>
+	</div>
 </div>
