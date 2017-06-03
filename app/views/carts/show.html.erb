@@ -10,7 +10,7 @@
   <% @order_items.each do |item| %>
     <h5><%= item.product.name %></h5>
     <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-    <%= link_to "Delete", order_items_path(item), :data => {:confirm => "You sure?", :method => "delete"} %>
+    <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
   <% end %>
   <p>Your Total: <%= number_to_currency current_order.total_price %></p>
 <% else %>

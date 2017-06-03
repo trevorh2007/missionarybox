@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-	belongs_to :user, optional: true
   has_many :order_items
   before_save :update_total
   before_create :update_status
@@ -12,7 +11,7 @@ class Order < ApplicationRecord
 
   def update_status
     if self.status == nil?
-      self.status = "In progress"
+      self.status = "Added to cart"
     end
   end
 

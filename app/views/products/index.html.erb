@@ -9,7 +9,7 @@
 	  <%= form_for @order_item do |f| %>
 	    <%= f.hidden_field :product_id, value: product.id %>
 	    quantity: <%= f.number_field :quantity %>
-	    <%= f.submit "Add item cart" %>
+	    <%= f.submit "Add to cart", class: 'btn waves-effect waves-light', type: 'submit', name: 'action' %>
 	  <% end %></p>
 	<% end %>
 </div>

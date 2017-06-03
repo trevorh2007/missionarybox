@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 	root to: 'pages#home'
 	get "subscribe", to: 'pages#subscribe'
 	get "products", to: 'products#index'
-	resource :order_items, only: [:create]
+	resources :order_items, only: [:create, :destroy]
 
 	resource :cart, only: [:show]
 
