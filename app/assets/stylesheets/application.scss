@@ -106,11 +106,15 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 }
 
 select {
-    display: inline;
+    display: inline-block;
+    color: black;
     background-color: #f2f2f2;
     width: auto;
-    padding: 5px;
     border: 1px solid #f2f2f2;
-    border-radius: 2px;
-    height: 3rem;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.cart-btn {
+  margin: 7px;
 }
