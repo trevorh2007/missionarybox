@@ -31,4 +31,8 @@ module ApplicationHelper
   def active? path
     "active" if current_page? path
   end
+
+  def quantity_helper
+    (1..10).to_a
+  end
 end

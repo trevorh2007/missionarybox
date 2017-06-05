@@ -104,3 +104,13 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   margin: auto;
   display: block;
 }
+
+select {
+    display: inline;
+    background-color: #f2f2f2;
+    width: auto;
+    padding: 5px;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    height: 3rem;
+}
