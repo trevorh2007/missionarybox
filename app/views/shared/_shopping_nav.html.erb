@@ -6,16 +6,20 @@
   <br>
   <br>
   <br>
-  <li><% if @order_items.any? %>
-  <% @order_items.each do |item| %>
-    <h5><%= item.product.name %></h5>
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-    <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
-  <% end %>
-  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
-<% else %>
-  <p>Your shopping cart is empty.</p>
-<% end %></li>
+  <li><% if @order_items != nil %>
+        <% if @order_items == nil || @order_items.any? %>
+          <% @order_items.each do |item| %>
+            <h5><%= item.product.name %></h5>
+            <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+            <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
+        <% end %>
+        <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+        <% else %>
+        <p>Your shopping cart is empty.</p>
+        <% end %>
+      <% else %>
+        <p>Your shopping cart is empty.</p>
+      <% end %></li>
   <br>
   <br>
   <br>
