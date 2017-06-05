@@ -9,7 +9,7 @@ User.create!(
 10.times do |product|
 	Product.create!(
 		name: "#{product} blue necktie",
-		price: 40 * product
+		price: 40 + (product * 2)
 		)
 end
 puts "1 user created"

@@ -8,6 +8,7 @@
           <% if @order_items == nil || @order_items.any? %>
             <% @order_items.each do |item| %>
               <h5><%= item.product.name %></h5>
+              <img class="cart-img-sidebar" src="assets/bluetie.jpg">
               <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %></p>
               <div class='container'>
                 <p class="right-align">Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
