@@ -3,20 +3,35 @@
 <br>
 <br>
 <br>
-<div class="container">
-	  <div class="row">
+<div class="row">
 	<% @products.each do |product| %>
-	  <div class="col s4">
-	  <p><%= product.name %></p>
-	  <p>Price: <%= number_to_currency product.price %></p>
-	  <%= form_for @order_item do |f| %>
-	    <%= f.hidden_field :product_id, value: product.id %>
-	    <p>quantity: <%= f.select :quantity, options_for_select((1..10).collect {|s| ["#{s}", s]}, 1) %></p>
-	    <p><%= f.submit "Add to cart", class: 'btn', type: 'submit', name: 'action' %></p>
-    </div>
-	  </div>
-	  <% end %></p>
-	<% end %>
+		<div class="container center-align">
+    	<div class="col s4">
+      	<div class="card">
+				  <p>
+				  	<%= product.name %>
+				  </p>
+
+		  		<p>
+		  			Price: <%= number_to_currency product.price %>
+	  			</p>
+
+		  		<%= form_for @order_item do |f| %>
+			    	<%= f.hidden_field :product_id, value: product.id %>
+
+			    	<p class="center-align">
+			    		quantity: <%= f.select :quantity, options_for_select((1..10).collect {|s| ["#{s}", s]}, 1) %>		
+		    		</p>
+
+			    	<p class="center-align">
+			    		<%= f.submit "Add to cart", class: 'btn', type: 'submit', name: 'action' %>
+		    		</p>
+
+	    	</div>
+  		</div>
+	  <% end %>
+  	</div>
+<% end %>
 </div>
 
 
