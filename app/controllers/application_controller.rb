@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def cart_bar
+    @order_items = current_order.order_items
+  end
+
 private
 
   def configure_permitted_parameters
