@@ -120,11 +120,15 @@ select {
 }
 
 .cart-img {
-  width: 175px;
+  width: 125px;
 }
 
 .cart-img-sidebar {
   width: 175px;
   display: block;
   margin: auto;
+}
+
+.right-float-cart {
+  float: right !important;
 }

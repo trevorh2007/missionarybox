@@ -8,12 +8,33 @@
       	<div class="card-block">
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <h5><%= item.product.name %></h5>
-    <img class="cart-img" src="assets/bluetie.jpg">
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-    <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
+    <div class="row valign-wrapper">
+      <div class="col l3">
+        <h5 id='left'>
+          <%= item.product.name %>
+        </h5>
+      </div>
+
+      <div class="col l3">
+        <img class="cart-img" src="assets/bluetie.jpg">
+      </div>
+
+      <div class="col l3">
+        Price: <%= number_to_currency item.product.price %>
+      </div>
+
+      <div class="col l3">
+        Quantity: <%= item.quantity %> |
+        <%= link_to "Remove", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
+      </div>
+      
+      <div class="col l2">
+        Total: <%= number_to_currency (item.product.price * item.quantity) %>
+      </div>
+    </div>
   <% end %>
-  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+  <hr>
+  <p class="right-align">Your Total: <%= number_to_currency current_order.total_price %></p>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
