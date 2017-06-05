@@ -1,41 +1,34 @@
-<ul id="slide-out" class="side-nav center-align">
-  <h5>Cart</h5>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <li><% if @order_items != nil %>
-        <% if @order_items == nil || @order_items.any? %>
-          <% @order_items.each do |item| %>
-            <h5><%= item.product.name %></h5>
-            <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
-            <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
-        <% end %>
-        <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+<ul id="slide-out" class="side-nav">
+  <h5 class="center-align">Your Cart</h5>
+    <div class='container'>
+      <hr>
+    </div>
+    <br>
+    <li><% if @order_items != nil %>
+          <% if @order_items == nil || @order_items.any? %>
+            <% @order_items.each do |item| %>
+              <h5><%= item.product.name %></h5>
+              <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %></p>
+              <div class='container'>
+                <p class="right-align">Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+              </div>
+              <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
+          <% end %>
+            <div class='container'>
+            <hr>
+              <p class="right-align">Order Total: <%= number_to_currency current_order.total_price %></p>
+            </div>
+          <% else %>
+            <p>Your shopping cart is empty.</p>
+          <% end %>
         <% else %>
-        <p>Your shopping cart is empty.</p>
-        <% end %>
-      <% else %>
-        <p>Your shopping cart is empty.</p>
-      <% end %></li>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <li>Final price total goes here</li>
-  <li>Proceed to checkout button goes here</li>
+          <p>Your shopping cart is empty.</p>
+        <% end %></li>
 </ul>
 
 <script type="text/javascript">
     $(".button-collapse").sideNav({
       edge: 'right',
-      menuWidth: 300
+      menuWidth: 350
     });
 </script>
