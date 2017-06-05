@@ -7,7 +7,7 @@
 				  	<%= product.name %>
 				  </h5>
 
-				  <img class="responsive-img" src="assets/bluetie.jpg">
+				  <%= image_tag(product.image, class: 'responsive-img') %>
 
 		  		<p class="right-align">
 		  			Price: <%= number_to_currency product.price %>

@@ -8,18 +8,18 @@
       	<div class="card-block">
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <div class="row valign-wrapper">
+    <div class="row valign-wrapper center-align">
       <div class="col l3">
         <h5 id='left'>
           <%= item.product.name %>
         </h5>
       </div>
 
-      <div class="col l3">
-        <img class="cart-img" src="assets/bluetie.jpg">
+      <div class="col l2">
+        <%= image_tag(item.product.image, class: 'cart-img') %>
       </div>
 
-      <div class="col l3">
+      <div class="col l2">
         Price: <%= number_to_currency item.product.price %>
       </div>
 
@@ -28,13 +28,13 @@
         <%= link_to "Remove", order_item_path(item), method: :delete %>
       </div>
       
-      <div class="col l2">
-        Total: <%= number_to_currency (item.product.price * item.quantity) %>
+      <div class="col l2 right-align">
+        <%= number_to_currency (item.product.price * item.quantity) %>
       </div>
     </div>
   <% end %>
   <hr>
-  <p class="right-align">Your Total: <%= number_to_currency current_order.total_price %></p>
+  <p class="right-align">Cart Total: <%= number_to_currency current_order.total_price %></p>
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>

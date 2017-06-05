@@ -7,29 +7,44 @@
     <li><% if @order_items != nil %>
           <% if @order_items == nil || @order_items.any? %>
             <% @order_items.each do |item| %>
-              <h5><%= item.product.name %></h5>
-              <img class="cart-img-sidebar" src="assets/bluetie.jpg">
-              <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %></p>
-              <div class='container'>
-                <p class="right-align">Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+              <div class="row valign-wrapper center-align">
+                <div class="col l3">
+                  <p id='left'>
+                    <%= item.product.name %>
+                  </p>
+                </div>
+
+                <div class="col l2">
+                  <%= image_tag(item.product.image, class: 'cart-img-sidebar') %>
+                </div>
+
+                <div class="col l2">
+                  <%= number_to_currency item.product.price %>
+                </div>
+
+                <div class="col l3">
+                  Quantity: <%= item.quantity %>
+                  <%= link_to "Remove", order_item_path(item), method: :delete %>
+                </div>
+                
+                <div class="col l2 right-align">
+                  <%= number_to_currency (item.product.price * item.quantity) %>
+                </div>
               </div>
-              <%= link_to "Delete", order_item_path(item), data: { confirm: "Are you sure?" }, method: :delete %>
           <% end %>
             <div class='container'>
             <hr>
               <p class="right-align">Order Total: <%= number_to_currency current_order.total_price %></p>
             </div>
           <% else %>
-            <p>Your shopping cart is empty.</p>
+            <p class= "center-align">Your shopping cart is empty.</p>
           <% end %>
-        <% else %>
-          <p>Your shopping cart is empty.</p>
         <% end %></li>
 </ul>
 
 <script type="text/javascript">
     $(".button-collapse").sideNav({
       edge: 'right',
-      menuWidth: 350
+      menuWidth: 450
     });
 </script>
