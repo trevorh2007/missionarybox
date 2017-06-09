@@ -26,8 +26,8 @@
       <div class="input-field col l3">
         <div>
         <%= form_for item do |f| %>
-          Quantity: <%= f.select :quantity, options_for_select((1..10).collect {|s| ["#{s}", s]}, { include_blank: true }) %>
-          <%= f.submit "Update", class: 'btn btn-cart-show', type: 'submit', name: 'action' %>
+          Quantity: <%= f.text_field :quantity, class: 'quantity-cart' %>
+          <%= f.submit "Update", class: 'btn btn-small', type: 'submit', name: 'update' %>
         <% end %>
         </div>
             </p>

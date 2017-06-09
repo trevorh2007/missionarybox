@@ -15,6 +15,17 @@ class OrderItemsController < ApplicationController
     redirect_to cart_path
   end
 
+  def update
+    @order = current_order
+    @item = @order.order_items.find(params[:id])
+      respond_to do |format|
+      if @item.update(item_params)
+        format.html { redirect_to cart_path, notice: 'Cart updated.' }
+      end
+    end
+  end
+
+
   private
 
   def item_params
