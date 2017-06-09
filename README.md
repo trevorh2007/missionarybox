@@ -15,3 +15,5 @@ x Fix edit page to look pretty
 x Add image to product association so images can be called on products
 - Add description to product association so description can be called on products
 - Ecommerce integration
+- Fix quantity to subscription
+- Integrate easier styles and maybe go down to just a 1 homepage
