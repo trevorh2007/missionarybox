@@ -23,8 +23,8 @@
         <div>
         <%= form_for item do |f| %>
           <%= f.select :quantity, options_for_select(
-          ["1 month subscription - #{number_to_currency item.product.price}",
-           "3 month subscription - #{number_to_currency item.product.price * 3}",
+          ["1 month subscriptio - #{number_to_currency item.product.price}",
+           "3 month subscriptio - #{number_to_currency item.product.price * 3}",
            "6 month subscription - #{number_to_currency item.product.price * 6}",
            "12 month subscription - #{number_to_currency item.product.price * 12}"],
               "#{current_order}") %>
