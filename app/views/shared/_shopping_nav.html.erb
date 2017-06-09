@@ -34,7 +34,7 @@
           <% end %>
             <div class='container'>
             <hr>
-              <p class="right-align">Order Total: <%= number_to_currency current_order.total_price %></p>
+              <p class="right-align">Order Total: <%= number_to_currency current_order.calculate_total %></p>
             </div>
           <% else %>
             <p class= "center-align">Your shopping cart is empty.</p>
