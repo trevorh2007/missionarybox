@@ -8,7 +8,7 @@
           <% if @order_items == nil || @order_items.any? %>
             <% @order_items.each do |item| %>
               <div class="row valign-wrapper center-align">
-                <div class="col l3">
+                <div class="col l4">
                   <p id='left'>
                     <%= item.product.name %>
                   </p>
@@ -22,14 +22,14 @@
                   <%= number_to_currency item.product.price %>
                 </div>
 
-                <div class="col l3">
+                <div class="col l4">
                   Quantity: <%= item.quantity %>
-                  <%= link_to "Remove", order_item_path(item), method: :delete %>
                 </div>
                 
                 <div class="col l2 right-align">
                   <%= number_to_currency (item.product.price * item.quantity) %>
                 </div>
+                  <%= link_to "Remove", order_item_path(item), method: :delete %>
               </div>
           <% end %>
             <div class='container'>
@@ -45,6 +45,6 @@
 <script type="text/javascript">
     $(".button-collapse").sideNav({
       edge: 'right',
-      menuWidth: 450
+      menuWidth: 550
     });
 </script>
