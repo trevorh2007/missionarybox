@@ -17,3 +17,6 @@ x Add image to product association so images can be called on products
 - Ecommerce integration
 - Fix quantity to subscription
 - Integrate easier styles and maybe go down to just a 1 homepage
+
+- Make devise logins friendlier for older customers
+- Plain and simple styling, need functionality complete asap
