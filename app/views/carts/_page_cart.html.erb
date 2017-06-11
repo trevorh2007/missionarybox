@@ -17,7 +17,11 @@
 			    	<%= f.hidden_field :product_id, value: product.id %>
  
 			    	<div class="right-align">
-			    		<%= f.select :quantity, options_for_select(["1 month subscription - #{number_to_currency product.price}", "3 month subscription - #{number_to_currency product.price * 3}", "6 month subscription - #{number_to_currency product.price * 6}", "12 month subscription - #{number_to_currency product.price * 12}"], { include_blank: true }) %>
+			    		<%= f.select :quantity, [
+           ["1 month subscription - #{number_to_currency product.price}", 1],
+           ["3 month subscription - #{number_to_currency product.price * 3}", 3],
+           ["6 month subscription - #{number_to_currency product.price * 6}", 6],
+           ["12 month subscription - #{number_to_currency product.price * 12}", 12]] %>
 		    		</div>
 
 			    	<p class="right-align">
