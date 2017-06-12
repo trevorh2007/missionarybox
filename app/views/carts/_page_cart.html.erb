@@ -1,7 +1,7 @@
 <div class="row">
 	<% @products.each do |product| %>
 		<div class="center-align">
-    	<div class="col s6 l3">
+    	<div class="col s6 l6">
       	<div class="card blue-grey darken-1 white-text">
 				  <h5>
 				  	<%= product.name %>
@@ -17,11 +17,11 @@
 			    	<%= f.hidden_field :product_id, value: product.id %>
  
 			    	<div class="right-align">
-			    		Quantity: <%= f.select :quantity, options_for_select((1..10).collect {|s| ["#{s}", s]}, { include_blank: true }) %>
+			    		<%= f.select :quantity, options_for_select(["1 month subscription - #{number_to_currency product.price}", "3 month subscription - #{number_to_currency product.price * 3}", "6 month subscription - #{number_to_currency product.price * 6}", "12 month subscription - #{number_to_currency product.price * 12}"], { include_blank: true }) %>
 		    		</div>
 
 			    	<p class="right-align">
-			    		<%= f.submit "Add to cart", class: 'btn cart-btn', type: 'submit', name: 'action' %>
+			    		<%= f.submit "Subscribe", class: 'btn cart-btn', type: 'submit', name: 'action' %>
 		    		</p>
 
 	    	</div>

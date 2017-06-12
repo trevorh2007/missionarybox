@@ -143,6 +143,16 @@ select {
 
 input.quantity-cart {
   width: 20%;
-  border: 1px solid white;
-  margin: 5px;
+  height: 1.5rem;
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+
+.responsive-img {
+  height: auto;
+}
+
+.cart-update-btn {
+  margin-left: 20px;
 }

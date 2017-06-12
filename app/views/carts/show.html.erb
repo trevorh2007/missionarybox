@@ -19,19 +19,19 @@
         <%= image_tag(item.product.image, class: 'cart-img') %>
       </div>
 
-      <div class="col l2">
-        Price: <%= number_to_currency item.product.price %>
-      </div>
-
-      <div class="input-field col l3">
+      <div class="input-field col l8">
         <div>
         <%= form_for item do |f| %>
-          Quantity: <%= f.text_field :quantity, class: 'quantity-cart' %>
-          <%= f.submit "Update", class: 'btn btn-small', type: 'submit', name: 'update' %>
+          <%= f.select :quantity, options_for_select(
+          ["1 month subscription - #{number_to_currency item.product.price}",
+           "3 month subscription - #{number_to_currency item.product.price * 3}",
+           "6 month subscription - #{number_to_currency item.product.price * 6}",
+           "12 month subscription - #{number_to_currency item.product.price * 12}"],
+              "#{current_order}") %>
+          <%= f.submit "Update", class: 'btn btn-small cart-update-btn', type: 'submit', name: 'update' %>
         <% end %>
+        <%= link_to "Remove", order_item_path(item), method: :delete, class: "float-right" %>
         </div>
-            </p>
-        <%= link_to "Remove", order_item_path(item), method: :delete %>
       </div>
       
       <div class="col l2 right-align">
@@ -44,8 +44,8 @@
 <% else %>
   <p>Your shopping cart is empty.</p>
 <% end %>
-<hr id="half-size-hr">
-          <h5 class='center-align'>Not finished? <%= link_to "Continue Shopping", root_path('/#products'), class: 'btn' %></h5>
+<!-- <hr id="half-size-hr">
+          <h5 class='center-align'>Not finished? <%= link_to "Continue Shopping", root_path(@pages, :anchor => "products"), class: 'btn' %></h5> -->
 			</div>
 		</div>
 	</div>

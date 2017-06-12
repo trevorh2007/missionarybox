@@ -32,7 +32,7 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
-  def quantity_helper
-    (1..10).to_a
+  def selector_helper
+
   end
 end
