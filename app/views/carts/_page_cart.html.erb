@@ -1,30 +1,34 @@
-<div class="row">
-	<% @products.each do |product| %>
-		<div class="center-align">
-    	<div class="col s6 l6">
-      	<div class="card blue-grey darken-1 white-text">
-				  <h5>
-				  	<%= product.name %>
-				  </h5>
+<div class="wide-home-div">
+	<div class="container">
+		<div class="row">
+			<% @products.each do |product| %>
+				<div class="center-align">
+		    	<div class="col s6 l6">
+		      	<div class="card padding-card">
+						  <h5>
+						  	<%= product.name %>
+						  </h5>
 
-				  <%= image_tag(product.image, class: 'responsive-img') %>
+						  <%= image_tag(product.image, class: 'responsive-img') %>
 
-		  		<%= form_for @order_item do |f| %>
-			    	<%= f.hidden_field :product_id, value: product.id %>
- 
-			    	<div>
-			    		<%= f.select :quantity, [
-           ["1 month subscription - #{number_to_currency product.price}", 1],
-           ["3 month subscription - #{number_to_currency product.price * 3}", 3],
-           ["6 month subscription - #{number_to_currency product.price * 6}", 6],
-           ["12 month subscription - #{number_to_currency product.price * 12}", 12]] %>
+				  		<%= form_for @order_item do |f| %>
+					    	<%= f.hidden_field :product_id, value: product.id %>
+		 
+					    	<div>
+					    		<%= f.select :quantity, [
+		           ["1 month subscription - #{number_to_currency product.price}", 1],
+		           ["3 month subscription - #{number_to_currency product.price * 3}", 3],
+		           ["6 month subscription - #{number_to_currency product.price * 6}", 6],
+		           ["12 month subscription - #{number_to_currency product.price * 12}", 12]] %>
 
-			    		<%= f.submit "Subscribe", class: 'btn cart-btn', type: 'submit', name: 'action' %>
-		    		</div>
+					    		<%= f.submit "Subscribe", class: 'btn cart-btn', type: 'submit', name: 'action' %>
+				    		</div>
 
-	    	</div>
-  		</div>
-	  <% end %>
-  	</div>
-<% end %>
+			    	</div>
+		  		</div>
+			  <% end %>
+		  	</div>
+		<% end %>
+		</div>
+	</div>
 </div>
