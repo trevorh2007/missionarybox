@@ -17,6 +17,5 @@
 //= require gritter
 //= require twitter/bootstrap/rails/confirm
 //= require jquery.turbolinks
-//= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
