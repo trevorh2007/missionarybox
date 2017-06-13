@@ -3,7 +3,7 @@
 @import "font-awesome";
 
 body {
-  background-color: #F0F3BD;
+  background-color: #fff;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -14,11 +14,13 @@ main {
 }
 
 .navbar-color {
-	background-color: #1A5E63;
+	background-color: #000000;
+  opacity: .75;
 }
 
 .page-footer {
-  background-color: #1A5E63;
+  background-color: #000000;
+  opacity: .5;
 }
 
 nav a.button-collapse {
