@@ -13,14 +13,17 @@ main {
   flex: 1 0 auto;
 }
 
-.navbar-color {
-	background-color: #000000;
-  opacity: .75;
+.nav-wrapper a:hover {
+  background-color: #2d2d2d;
+  border-radius: 5px;
 }
 
-.user-dropdown {
+.navbar-color {
+  background-color:rgba(0,0,0,0.75);
+}
+
+#dropdown1 {
   background-color: #fff;
-  opacity: 1;
 }
 
 .wide-home-div {
