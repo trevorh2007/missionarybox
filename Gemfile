@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 git_source(:github) do |repo_name|
 end
 
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1', '>= 5.1.1'
 gem 'pg', '~> 0.20.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -35,3 +35,7 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1', groups: [:development, :test]
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'twitter-bootstrap-rails-confirm', '~> 1.0', '>= 1.0.6'
 gem 'jquery-turbolinks', '~> 2.1'
+
+
+gem 'kaminari', '~> 1.0', '>= 1.0.1'
+gem 'actionpack', '~> 5.1', '>= 5.1.1'
